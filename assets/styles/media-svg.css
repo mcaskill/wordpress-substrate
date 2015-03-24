@@ -1,0 +1,11 @@
+/**
+ * Fix SVG thumbnails.
+ *
+ * @package Substrate\Media
+ */
+
+td.media-icon img[src$=".svg"],
+img[src$=".svg"].attachment-post-thumbnail {
+	width: 100%;
+	height: auto;
+}

@@ -1,0 +1,22 @@
+/*
+
+	DASHBOARD
+
+	Add some styles to the WordPress administration-end.
+
+*/
+
+/* ==========================================================================
+   WordPress
+   ========================================================================== */
+
+/* Admin Menu
+   ========================================================================== */
+
+/**
+ * Fix admin menu dropdowns from showing up behind main content.
+ */
+
+#adminmenuwrap {
+	z-index: 1;
+}

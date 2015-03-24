@@ -1,0 +1,9 @@
+/**
+ * Manage Screen: Add support for "Template" column
+ *
+ * @used-by Modules: `substrate-page-template-column`
+ */
+
+.fixed .column-template {
+	width: 10%;
+}

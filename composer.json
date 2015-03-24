@@ -1,0 +1,39 @@
+{
+  "name": "mcaskill/wp-substrate",
+  "type": "wordpress-plugin",
+  "license": "MIT",
+  "description": "A WordPress plugin which contains a collection of modules to improve the front-end and administration area.",
+  "homepage": "https://github.com/mcaskill/wordpress-substrate",
+  "authors": [
+    {
+      "name": "Chauncey McAskill",
+      "email": "chauncey@mcaskill.ca",
+      "homepage": "https://github.com/mcaskill"
+    }
+  ],
+  "keywords": [
+    "wordpress", "wp"
+  ],
+  "support": {
+    "issues": "https://github.com/mcaskill/wordpress-substrate/issues"
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://gist.github.com/902ac7703021ce663eac.git"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "composer/installers": "~1.0",
+    "mcaskill/php-array-insert": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "McAskill\\Substrate\\": "library/"
+    }
+  },
+  "extra": {
+    "installer-name": "substrate"
+  }
+}

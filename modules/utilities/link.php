@@ -85,50 +85,47 @@ function get_adjacent_post( $args = [] )
 			$allowed_keys[] = 'meta_value';
 			$allowed_keys[] = 'meta_value_num';
 
-			if ( ! in_array($r['key'], $allowed_keys) )
-				break;
-
-			switch ( $r['key'] ) {
-				case $r['key']:
-				case 'meta_value':
-					$key = "$wpdb->postmeta.meta_value";
-					$value = false;
-					break;
-				case 'meta_value_num':
-					$key = "$wpdb->postmeta.meta_value+0";
-					$value = false;
-					break;
+			if ( in_array($r['key'], $allowed_keys) ) {
+				switch ( $r['key'] ) {
+					case $r['key']:
+					case 'meta_value':
+						$key   = "$wpdb->postmeta.meta_value";
+						$value = false;
+						break;
+					case 'meta_value_num':
+						$key   = "$wpdb->postmeta.meta_value+0";
+						$value = false;
+						break;
+				}
 			}
 
 		} else {
 
-			if ( ! in_array($r['key'], $allowed_keys) )
-				break;
-
-			switch ( $r['key'] ) {
-				case 'menu_order':
-					$key = 'p.menu_order';
-					$value = $post->menu_order;
-					break;
-				case 'ID':
-					$key = 'p.ID';
-					$value = $post->ID;
-					break;
-				case 'comment_count':
-					$key = 'p.comment_count';
-					$value = $post->comment_count;
-					break;
-				default:
-					if ( isset( $post->{'post_' . $r['key']} ) ) {
-						$key = 'p.post_' . $r['key'];
-						$value = $post->{'post_' . $r['key']};
-					}
+			if ( in_array($r['key'], $allowed_keys) ) {
+				switch ( $r['key'] ) {
+					case 'menu_order':
+						$key   = 'p.menu_order';
+						$value = $post->menu_order;
+						break;
+					case 'ID':
+						$key   = 'p.ID';
+						$value = $post->ID;
+						break;
+					case 'comment_count':
+						$key   = 'p.comment_count';
+						$value = $post->comment_count;
+						break;
+					default:
+						if ( isset( $post->{'post_' . $r['key']} ) ) {
+							$key   = 'p.post_' . $r['key'];
+							$value = $post->{'post_' . $r['key']};
+						}
+				}
 			}
 		}
 
-		if ( empty( $key ) )
-		{
-			$key = 'p.post_date';
+		if ( empty( $key ) ) {
+			$key   = 'p.post_date';
 			$value = $post->post_date;
 		}
 	}
@@ -157,7 +154,6 @@ function get_adjacent_post( $args = [] )
 	}
 
 	$join = apply_filters( "get_{$adjacent}_post_join", $tax_sql['join'] . $meta_sql['join'], $tax_query_obj, $meta_query_obj );
-
 
 	if ( empty( $r['order_by'] ) ) {
 		$orderby = $key;

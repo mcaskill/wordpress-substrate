@@ -4,7 +4,7 @@
  * Plugin Name:  Substrate
  * Plugin URI:   https://github.com/mcaskill/wordpress-substrate
  * Description:  A collection of handy features, fixes, and helpers which make your life with WordPress easier.
- * Version:      0.0.0
+ * Version:      0.1.0
  *
  * Author:       Chauncey McAskill
  * Author URI:   https://mcaskill.ca

@@ -92,7 +92,7 @@ function capture_media_templates()
 
 	add_action( 'shutdown', function () {
 		$output = '';
-		$ob_levels = count( ob_get_level() );
+		$ob_levels = ob_get_level();
 
 		for ( $i = 0; $i < $ob_levels; $i++ ) {
 			$output .= ob_get_clean();
